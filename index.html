@@ -88,14 +88,11 @@ h1{display:flex;align-items:center;justify-content:space-between}
 (function(){
 var KEY='mccards.v1',$=function(i){return document.getElementById(i)};
 var S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!S||!S.lists||!S.lists.length){S={cur:0,lists:[{name:'Example: Speaker notes',items:[
-'Welcome to MC Cards\nBig, thumb-friendly cue cards for MCs and speakers. Each item in a list becomes one card.',
-'Swipe to move on\nDrag the top card and fling it off the screen. Tap to advance. Use Back to bring the last card back.',
-'Edit and reorder\nAdd, edit or delete items in the editor. Drag the handle or use the up/down buttons to reorder, then hit Present.',
-'Share a list by link\nTap Share to send the list as a link. It lives after the # so nothing is sent to a server.',
-'Welcome & housekeeping\nThank everyone for coming. Exits, restrooms, phones on silent.',
-'Introduce next speaker\nName, role, one interesting fact, topic of the talk.',
-'Thank you & close\nThank speakers and helpers. Next event details. Safe travels home.']}]};save();}
+if(!S||!S.lists||!S.lists.length){S={cur:0,lists:[{name:'Example list',items:[
+'Item 1\nExample card. Edit or replace me.',
+'Item 2\nExample card. Edit or replace me.',
+'Item 3\nExample card. Edit or replace me.'
+]}]};save();}
 var editing=-1,idx=0;
 function save(){localStorage.setItem(KEY,JSON.stringify(S))}
 function L(){if(S.cur>=S.lists.length)S.cur=0;return S.lists[S.cur]}
